@@ -1,8 +1,4 @@
 require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const { createServer } = require("http");
-const { auth, requiredScopes } = require("express-oauth2-jwt-bearer");
 const {
   checkUrl,
   APP_URL, // Public URL for this app
@@ -10,6 +6,10 @@ const {
   AUDIENCE, // Auth0 API Audience List
   PORT,
 } = require("./env-config");
+const express = require("express");
+const cors = require("cors");
+const { createServer } = require("http");
+const { auth, requiredScopes } = require("express-oauth2-jwt-bearer");
 
 const app = express();
 
@@ -55,9 +55,9 @@ app.get("/total", (req, res) => {
   res.send({ total, count: expenses.length });
 });
 
-// 👆 public routes above 👆
+// public routes above
 app.use(auth());
-// 👇 private routes below 👇
+// private routes below
 
 app.get("/reports", requiredScopes("read:reports"), (req, res) => {
   res.send(expenses);
