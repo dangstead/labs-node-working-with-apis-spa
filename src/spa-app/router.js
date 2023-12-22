@@ -17,8 +17,9 @@ const router = async () => {
     window.history.replaceState({}, document.title, "/");
   }
 
-  if (await window.auth0Client.isAuthenticated())
+  if (await window.auth0Client.isAuthenticated()) {
     window.user = await window.auth0Client.getUser();
+  }
 
   const request = location.hash.slice(1).toLowerCase() || "/";
   const page = routes[request] || Error404;
