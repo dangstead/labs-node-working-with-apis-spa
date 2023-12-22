@@ -47,7 +47,7 @@ const Navbar = {
       window.auth0Client.logout({
         logoutParams: {
           returnTo: window.env.APP_URL,
-          },
+        },
       });
     });
   },
