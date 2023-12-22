@@ -6,13 +6,13 @@
 (function (window) {
   let API_URL = process.env.API_URL || "http://localhost:35500";
   let APP_URL = "http://localhost:38500";
+  const PORT = 38500;
   const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
   const CLIENT_ID = process.env.CLIENT_ID;
   const VERCEL_URL = process.env.VERCEL_URL;
   const VERCEL_GITHUB_ORG = process.env.VERCEL_GITHUB_ORG;
   const VERCEL_GITHUB_REPO = process.env.VERCEL_GITHUB_REPO;
   const VERCEL_GIT_COMMIT_REF = process.env.VERCEL_GIT_COMMIT_REF;
-  const PORT = 38500;
 
   // update value based on vercel hosting
   if (VERCEL_URL) {
