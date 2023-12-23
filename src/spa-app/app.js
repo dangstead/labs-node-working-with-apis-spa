@@ -10,10 +10,10 @@ import router from "./router";
     clientId,
     authorizationParams: {
       redirect_uri,
+      audience: "https://expenses-api", // Added
+      scope: "read:reports", // Added
     },
     cacheLocation: "localstorage",
-    audience: "https://expenses-api", // Added
-    scope: "read:reports", // Added
   });
 
   // handle user navigation
