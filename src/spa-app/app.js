@@ -5,15 +5,12 @@ import router from "./router";
   const clientId = window.env.CLIENT_ID;
   const redirect_uri = window.env.APP_URL;
 
-window.auth0Client = await auth0.createAuth0Client({
-  domain,
-  clientId,
-  authorizationParams: {
-    redirect_uri,
+  window.auth0Client = await auth0.createAuth0Client({
+    domain,
+    clientId,
+    authorizationParams: {
+      redirect_uri,
     },
-    cacheLocation: "localstorage",
-    audience: "https://expenses-api", // 👈 Added
-    scope: "read:reports", // 👈 Added
   });
 
   // handle user navigation
