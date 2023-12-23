@@ -11,6 +11,9 @@ import router from "./router";
     authorizationParams: {
       redirect_uri,
     },
+    cacheLocation: "localstorage",
+    audience: "https://expenses-api", // Added
+    scope: "read:reports", // Added
   });
 
   // handle user navigation
