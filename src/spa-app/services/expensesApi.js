@@ -26,7 +26,8 @@ const expensesApi = {
           "Authorization": `Bearer ${token}`,
         },
       };
-      const res = await fetch(`${window.env.API_URL}/reports-private`, options);
+      // const res = await fetch(`${window.env.API_URL}/reports-private`, options);
+      const res = await fetch(`${window.env.API_URL}/reports`, options);
       const json = await res.json();
       return json;
       // Replace this with call to API

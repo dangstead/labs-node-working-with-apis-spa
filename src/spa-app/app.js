@@ -10,8 +10,8 @@ import router from "./router";
     clientId,
     authorizationParams: {
       redirect_uri,
-      audience: "https://expenses-api", // Added
-      scope: "read:reports", // Added
+      audience: "https://expenses-api",
+      scope: "openid profile email read:reports",
     },
     cacheLocation: "localstorage",
   });
